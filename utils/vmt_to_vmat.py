@@ -356,6 +356,10 @@ else:
     print('ERROR: CMD Arguments are invalid. Required format: "vmt_to_vmat.py C:\\path\\to\\folder_or_vmt"')
     quit()
 
+if (len(fileList) == 0):
+    print('INFO: Did not find any .vmt or .vtf files in target folder. Make sure you .tga, .vmt, and .vtf files are together.')
+    quit()
+    
 for vmtFileName in fileList:
     print("+ Processing .vmt file: " + vmtFileName)
     baseFileName  = os.path.basename(vmtFileName.replace('.vmt', ''))
